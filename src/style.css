@@ -13,11 +13,11 @@ li {
   padding-left: 2%;
 }
 
-#scores-list  li:nth-child(odd) {
+#scores-list li:nth-child(odd) {
   background: rgb(215, 214, 214);
 }
-  
-#scores-list  li:nth-child(even) {
+
+#scores-list li:nth-child(even) {
   background: #fff;
 }
 
