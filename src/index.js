@@ -1,19 +1,26 @@
+/* eslint-disable no-alert */
 import './style.css';
+import { NAME_INPUT, NUMBER_INPUT, CLEAR_INPUTS } from './modules/clear_inputs.js';
+import GET_SCORES from './modules/get_scores.js';
+import POST_SCORE from './modules/post_score.js';
+import RENDER_SCORE from './modules/render.js';
 
-const scores = [
-  { name: 'Alice', score: 96 },
-  { name: 'Bob', score: 80 },
-  { name: 'Cindy', score: 91 },
-  { name: 'Dennis', score: 81 },
-  { name: 'Ellen', score: 96 },
-  { name: 'Frank', score: 88 },
-  { name: 'George', score: 90 },
-];
+const FORM = document.querySelector('form');
+const REFRESH_BUTTON = document.querySelector('#refresh-button');
 
-const recentScoresUl = document.querySelector('#scores-list');
+FORM.addEventListener('submit', async (event) => {
+  event.preventDefault();
+  const NAME = NAME_INPUT.value;
+  const NUMBER = NUMBER_INPUT.value;
+  const RESULT = await POST_SCORE(NAME, NUMBER);
+  window.alert(RESULT.result);
+  CLEAR_INPUTS();
+  RENDER_SCORE(NAME, NUMBER);
+});
 
-scores.forEach((score) => {
-  const scoreLi = document.createElement('li');
-  scoreLi.textContent = `${score.name}: ${score.score}`;
-  recentScoresUl.appendChild(scoreLi);
+REFRESH_BUTTON.addEventListener('click', async () => {
+  const DATA = await GET_SCORES();
+  DATA.result.forEach((score) => {
+    RENDER_SCORE(score.user, score.score);
+  });
 });
