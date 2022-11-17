@@ -21,7 +21,7 @@ section {
   width: 50%;
 }
 
-.add-scores-section{
+.add-scores-section {
   padding: 0 5% 0 5%;
 }
 
@@ -44,7 +44,7 @@ ul li:nth-child(even) {
   color: #7d87a9;
 }
 
-li {
+.score-item {
   padding: 2%;
 }
 
