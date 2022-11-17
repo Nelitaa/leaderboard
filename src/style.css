@@ -1,28 +1,55 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+header {
+  background-color: #7d87a9;
+  color: #90caca;
+  padding: 5%;
+}
+
 main {
   display: flex;
   justify-content: space-between;
-  width: 50vh;
+  background-color: #f3f3f3;
+  padding: 10%;
 }
 
-#scores-list {
+section {
+  width: 50%;
+}
+
+.add-scores-section {
+  padding: 0 5% 0 5%;
+}
+
+h2 {
+  color: #7d87a9;
+}
+
+ul {
   list-style-type: none;
   padding: 0;
 }
 
-li {
-  padding-left: 2%;
+ul li:nth-child(odd) {
+  background: #7d87a9;
+  color: #f3f3f3;
 }
 
-#scores-list li:nth-child(odd) {
-  background: rgb(215, 214, 214);
+ul li:nth-child(even) {
+  background: #f3f3f3;
+  color: #7d87a9;
 }
 
-#scores-list li:nth-child(even) {
-  background: #fff;
+.score-item {
+  padding: 2%;
 }
 
 .border {
-  border: 2px solid #000;
+  border: 2px solid #7d87a9;
 }
 
 form {
@@ -32,6 +59,8 @@ form {
 
 input {
   margin-bottom: 10%;
+  padding: 2%;
+  color: #7d87a9;
 }
 
 .submit-button-container {
@@ -40,4 +69,19 @@ input {
 
 button {
   cursor: pointer;
+  background-color: #7d87a9;
+  color: #f3f3f3;
+  border-radius: 5px;
+  padding: 5px;
+  transition: all 0.5s ease-out;
+}
+
+button:hover {
+  color: #90caca;
+}
+
+button:focus {
+  color: #7d87a9;
+  background-color: #90caca;
+  border: #90caca;
 }
